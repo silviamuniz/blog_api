@@ -1,9 +1,9 @@
-class ArticlesController < ApplicationController
+class Api::V2::ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :update, :destroy]
 
   # GET /articles
   def index
-    @articles = Article.all
+    @articles = Article.last
 
     render json: @articles
   end
