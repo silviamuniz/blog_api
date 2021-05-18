@@ -3,7 +3,7 @@ class Api::V2::ArticlesController < ApplicationController
 
   # GET /articles
   def index
-    @articles = Article.last
+    @articles = Article.all
 
     render json: @articles
   end
