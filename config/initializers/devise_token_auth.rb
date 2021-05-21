@@ -35,7 +35,7 @@ DeviseTokenAuth.setup do |config|
   # Uncomment to enforce current_password param to be checked before all
   # attribute updates. Set it to :password if you want it to be checked only if
   # password is updated.
-  # config.check_current_password_before_update = :attributes
+   config.check_current_password_before_update = :password
 
   # By default we will use callbacks for single omniauth.
   # It depends on fields like email, provider and uid.
@@ -56,5 +56,11 @@ DeviseTokenAuth.setup do |config|
   # By default DeviseTokenAuth will not send confirmation email, even when including
   # devise confirmable module. If you want to use devise confirmable module and
   # send email, set it to true. (This is a setting for compatibility)
-  # config.send_confirmation_email = true
+   config.send_confirmation_email = true
+
+   config.default_confirm_sucess_url = 'http://localhost:4200/login'
+
+   config.default_password_url = 'http://localhost:4200/reset-password'
+
+   config.remove_tokens_after_password_reset = true
 end
